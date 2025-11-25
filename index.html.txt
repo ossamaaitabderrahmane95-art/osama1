@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>مغامرة الفضاء 3D - تحكم مطور</title>
+    <title>مغامرة الفضاء 3D - الإصدار النهائي</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <style>
@@ -169,7 +169,6 @@
                 <div class="mt-3 font-bold text-orange-400 text-sm flex items-center justify-end gap-2">
                     <span id="bombDisplay">1</span> <span>:قنابل ☢️</span>
                 </div>
-                <!-- Fixed: Added missing statusText element -->
                 <div id="statusText" class="text-xs text-gray-400 mt-2 text-right font-bold">الحالة: مستعد</div>
             </div>
         </div>
@@ -455,6 +454,8 @@
             collect: function() { if(!this.muted) { this.playTone(880, 'sine', 0.1); setTimeout(()=>this.playTone(1760, 'sine', 0.2), 50); } },
             upgrade: function() { if(!this.muted) { this.playTone(400, 'square', 0.1); setTimeout(()=>this.playTone(600, 'square', 0.1), 100); } },
             bossHit: function() { if(!this.muted) this.playTone(100, 'sawtooth', 0.2, 0.1); },
+            bossDie: function() { if(!this.muted) this.playTone(50, 'sawtooth', 1.5, 0.5); }, // Added Missing Function
+            enemyShoot: function() { if(!this.muted) this.playTone(300, 'square', 0.1, 0.05); }, // Added Missing Function
             gameOver: function() { if(!this.muted) this.playTone(150, 'sawtooth', 1.0, 0.3); }
         };
 
